@@ -9,7 +9,7 @@ Point Of Sales App is a application where the user can order many kind of bevera
 ## Development
 This app was build using Vue.js, Vuex, Bootstarp-Vue, the app consume API from the POS_APP_API, the API itself already store in server AWS.
 
-![image](https://github.com/syamsanur/POS_APP_AWS/blob/master/src/assets/posapp.png)
+![image](https://github.com/syamsanur/POS_APP_AWS/blob/master/src/assets/posapp2.png)
 
 ## Project setup
 ```
