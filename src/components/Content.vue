@@ -40,8 +40,8 @@
                 <b-icon icon="arrow-clockwise" animation="spin" font-scale="4"></b-icon>
                 <b>Loading ....</b></h3>
             </div>
-            <div class="p-3 text-center" v-else-if="dataProducts.data.length === 0">
-                <b-img src="https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg"/>
+            <div class=" col-12 p-3 text-center" v-else-if="dataProducts.data.length === 0">
+                <b-img class="img404" src="https://cdn.dribbble.com/users/1012566/screenshots/4187820/topic-2.jpg"/>
                 <b-btn variant="outline-danger" block @click="resetFilter"><b>MEH</b></b-btn>
             </div>
             <div v-else class="p-3 text-center" v-for="(item, index) in dataProducts.data" :key="index">
@@ -306,3 +306,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media (max-width: 576px) {
+  .img404 {
+    width: 350px;
+    height: 350px;
+  }
+}
+</style>

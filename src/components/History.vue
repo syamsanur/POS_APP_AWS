@@ -4,29 +4,31 @@
       <h4>Recent Order</h4>
     </div>
     <div class="col-lg-12 col-12 mt-3">
-      <table class="table-responsive">
-        <thead>
-          <tr>
-            <th><b>Invoice</b></th>
-            <th><b>Cashier</b></th>
-            <th><b>Date</b></th>
-            <th><b>Amount</b></th>
-            <th><b>Detail</b></th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- {{dataHistory}} -->
-          <tr v-for="(item, index) in dataHistory " :key="index">
-            <td>#{{item.id_history}}</td>
-            <td>{{item.cashier_history}}</td>
-            <td>{{item.date_history}}</td>
-            <td>{{item.amount_history}}</td>
-            <td>
-              <b-btn variant="info" size="sm" @click="getDetail(item.id_history)">Detail</b-btn>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive-sm">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><b>Invoice</b></th>
+              <th><b>Cashier</b></th>
+              <th><b>Date</b></th>
+              <th><b>Amount</b></th>
+              <th><b>Detail</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- {{dataHistory}} -->
+            <tr v-for="(item, index) in dataHistory " :key="index">
+              <td>#{{item.id_history}}</td>
+              <td>{{item.cashier_history}}</td>
+              <td>{{item.date_history}}</td>
+              <td>{{item.amount_history}}</td>
+              <td>
+                <b-btn variant="info" size="sm" @click="getDetail(item.id_history)">Detail</b-btn>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <b-modal id="product-collapse" title="Detail">
