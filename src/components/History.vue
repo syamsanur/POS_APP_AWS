@@ -4,7 +4,7 @@
       <h4>Recent Order</h4>
     </div>
     <div class="col-lg-12 col-12 mt-3">
-      <table class="table">
+      <table class="table-responsive">
         <thead>
           <tr>
             <th><b>Invoice</b></th>

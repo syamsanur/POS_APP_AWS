@@ -4,7 +4,7 @@
       <div class="col-12 col-lg-8">
         <b-col class="border bg-white">
           <b-row v-searchWarna="'#4A235A'">
-          <div class="col p-3">
+          <div class="col-12 col-lg-8 p-3">
             <b-input-group>
               <b-form-input
                 id="input-1"
@@ -17,8 +17,10 @@
               </div>
             </b-input-group>
           </div>
-          <div class="col p-3 text-right mr-3">
-            <button class="btn btn-secondary mr-4" @click="resetFilter">Reset</button>
+          <div class="col-2 col-lg-1 offset-lg-1 p-3 text-right">
+            <button class="btn btn-secondary" @click="resetFilter">Reset</button>
+          </div>
+          <div class="col-10 col-lg-2 p-3 text-right">
             <b-dropdown id="dropdown-1" right text="Sort" variant="success">
               <b-dropdown-item @click="getFilter(sortBy=('id_product'))">Default</b-dropdown-item>
               <b-dropdown-divider></b-dropdown-divider>
