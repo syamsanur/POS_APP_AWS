@@ -7,7 +7,7 @@
         <Chart />
     </div>
     <div class="col card">
-      <History :itemHistory="dataHistory"/>
+      <History/>
     </div>
   </div>
 </template>
@@ -17,7 +17,7 @@ import History from './History'
 import Chart from './Chart'
 import Cash from './Cash'
 
-import axios from 'axios'
+// import axios from 'axios'
 
 export default {
   components: {
@@ -31,19 +31,19 @@ export default {
     }
   },
   methods: {
-    getHistory () {
-      axios.get('history/getall').then((response) => {
-        this.dataHistory = response.data.data
-        // this.meta = response.data.meta
-        // console.log(response.data.data)
-        // console.log(response.data.meta)
-      }).catch((err) => {
-        console.log(err)
-      })
-    }
+    // getHistory () {
+    //   axios.get('history/getall').then((response) => {
+    //     this.dataHistory = response.data.data
+    //     // this.meta = response.data.meta
+    //     // console.log(response.data.data)
+    //     // console.log(response.data.meta)
+    //   }).catch((err) => {
+    //     console.log(err)
+    //   })
+    // }
   },
   mounted () {
-    this.getHistory()
+    // this.getHistory()
   }
 }
 </script>

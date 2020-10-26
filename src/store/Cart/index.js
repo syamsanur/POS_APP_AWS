@@ -1,26 +1,44 @@
+import axios from 'axios'
+
 const state = () => {
   return {
-    category: []
+    cart: []
   }
 }
 
 const getters = {
   getCart (state) {
-    return state.category
+    return state.cart
+  },
+  getTotal (state) {
+    let total = null
+    total = state.cart.reduce((a, { amount }) => a + amount, 0)
+    return total
   }
 }
 
 const mutations = {
   SET_CART (state, payload) {
-    state.category = payload
+    state.cart = payload
   }
 }
 
 const actions = {
-  addToCart (context, payload, { rootGetters }) {
-    console.log(payload)
-    const dataProduct = rootGetters['FoodDrink/getAllProduct']
-    console.log(dataProduct)
+  addCart (context, payload) {
+    context.commit('SET_CART', payload)
+  },
+  insert (context, payload) {
+    // console.log(payload)
+    return new Promise((resolve, reject) => {
+      axios.post('history/insert', payload)
+        .then((response) => {
+          resolve(response.data.message)
+          // console.log(response.data.message)
+        })
+        .catch((err) => {
+          reject(err)
+        })
+    })
   }
 }
 

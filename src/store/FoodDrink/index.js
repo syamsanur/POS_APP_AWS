@@ -43,12 +43,8 @@ const mutations = {
 const actions = {
   getAllProducts (context, payload) {
     context.commit('SET_ALL_LOADING', true)
-    // console.log(payload)
-    this.sortBy = payload ? null : 'id_product'
     return new Promise((resolve, reject) => {
-      // axios.get('product/getall')
-      // const name = !payload ? null : payload
-      axios.get(`product/getall?sorting=${payload}`)
+      axios.get('product/getall')
         .then((response) => {
           // console.log(response.data)
           context.commit('SET_PRODUCTS', response.data.data)
@@ -60,18 +56,14 @@ const actions = {
         })
     })
   },
-  getFindProduct (context, payload) {
+  getFilter (context, payload) {
     context.commit('SET_ALL_LOADING', true)
-    // this.name = payload ? null : payload
-    // console.log(payload)
     return new Promise((resolve, reject) => {
-      // axios.get('product/getall')
-      // const name = !payload ? null : payload
-      axios.get(`product/getall?name=${payload}`)
+      axios.get(`/product/getall?name=${payload.name}&sorting=${payload.sorting}&page=${payload.page}`)
         .then((response) => {
-          // console.log(response.data)
           context.commit('SET_PRODUCTS', response.data.data)
           context.commit('SET_ALL_LOADING', false)
+          // console.log(response.data)
           resolve()
         }).catch((err) => {
           context.commit('SET_ALL_LOADING', false)
